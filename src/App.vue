@@ -43,6 +43,7 @@
               type="number" 
               class="form-control" 
               placeholder="Sua idade"
+              name="genero"
               v-model.number="desenvolvedor.idade">
             </div>
 
@@ -51,12 +52,20 @@
               <p>Gênero:</p>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Masculino">
+                <input 
+                type="radio" 
+                class="form-check-input" 
+                value="Masculino"
+                v-model="desenvolvedor.genero">
                 <label class="form-check-label">Masculino</label>
               </div>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Feminino">
+                <input 
+                type="radio" 
+                class="form-check-input"
+                value="Feminino"
+                v-model="desenvolvedor.genero">
                 <label class="form-check-label">Feminino</label>
               </div>
 
@@ -136,7 +145,7 @@
               <li class="list-group-item"><strong>Ocupação:</strong> </li>
               <li class="list-group-item"><strong>Tecnologias:</strong> </li>
               <li class="list-group-item"><strong>Biografia:</strong>
-                <div style="white-space: pre">
+                <div style="white-space: pre;">
                   {{ desenvolvedor.biografia }}
                 </div>
               </li>
@@ -168,7 +177,8 @@ export default {
         nome: '',
         email: '',
         idade: 29,
-        biografia: 'Desenvolvedor desde 1800'
+        biografia: 'Desenvolvedor desde 1800',
+        genero: 'Masculino'
       }
     }
   }
