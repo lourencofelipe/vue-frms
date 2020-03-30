@@ -21,17 +21,29 @@
 
             <div class="form-group">
               <label>Nome:</label>
-              <input type="text" class="form-control" placeholder="Seu nome">
+              <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Seu nome"
+              v-model="desenvolvedor.nome">
             </div>
 
             <div class="form-group">
               <label>Endereço de email:</label>
-              <input type="email" class="form-control" placeholder="Seu email">
+              <input 
+              type="email" 
+              class="form-control" 
+              placeholder="Seu email"
+              v-model="desenvolvedor.email">
             </div>
 
             <div class="form-group">
               <label>Idade:</label>
-              <input type="number" class="form-control" placeholder="Sua idade">
+              <input 
+              type="number" 
+              class="form-control" 
+              placeholder="Sua idade"
+              v-model="desenvolvedor.idade">
             </div>
 
             <div class="form-group">
@@ -114,9 +126,9 @@
             <div class="card-header">Dados</div>
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Nome:</strong></li>
-              <li class="list-group-item"><strong>Email:</strong> </li>
-              <li class="list-group-item"><strong>Idade:</strong></li>
+              <li class="list-group-item"><strong>Nome:</strong>{{ desenvolvedor.nome }}</li>
+              <li class="list-group-item"><strong>Email:</strong>{{ desenvolvedor.email }} </li>
+              <li class="list-group-item"><strong>Idade:</strong>{{ desenvolvedor.idade }}</li>
               <li class="list-group-item"><strong>Gênero:</strong> </li>
               <li class="list-group-item"><strong>Ocupação:</strong> </li>
               <li class="list-group-item"><strong>Tecnologias:</strong> </li>
@@ -127,7 +139,7 @@
             <div class="card-header">Model</div>
 
             <div class="card-body">
-              <pre><code>{{ {'nome': 'Darth Vader'} }}</code></pre>
+              <pre><code>{{ desenvolvedor }}</code></pre>
             </div>
 
           </div>
@@ -141,6 +153,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  data(){
+    return {
+      desenvolvedor: {
+        nome: '',
+        email: '',
+        idade: 29
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
   .btn {
