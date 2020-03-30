@@ -19,8 +19,8 @@ export default {
         inputClasses: [String, Object, Array]
     },
     data() {
-        valorAtual: this.value || this.$attrs.min
         return {
+            valorAtual: this.value || this.$attrs.min
         }
     },
     computed: {

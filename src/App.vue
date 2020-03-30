@@ -191,6 +191,7 @@
                 </div>
               </li>
               <li class="list-group-item"><strong>Receber notificações?</strong>{{ desenvolvedor.notificacoes }}</li>
+              <li class="list-group-item"><strong>Salário:</strong>{{ desenvolvedor.salario }}</li>
             </ul>
 
             <div class="card-header">Model</div>
