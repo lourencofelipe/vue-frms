@@ -25,7 +25,7 @@ export default {
     },
     computed: {
         customLabel() {
-            return `${this.label} (R$ ${this.valorAtual})`
+            return `${this.label} (R$ ${this.value || this.$attrs.min })`
         }
     },
     methods: {
