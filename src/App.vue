@@ -147,7 +147,7 @@
             </div>
 
             <button class="btn btn-secondary">Resetar</button>
-            <button class="btn btn-success">Enviar</button>
+            <button class="btn btn-success" type="button" @click="enviar">Enviar</button>
 
           </form>
 
@@ -204,7 +204,7 @@
 export default {
   data(){
     return {
-      desenvolvedor: {
+      ValoresPadroes: {
         nome: '',
         email: '',
         idade: 29,
@@ -220,7 +220,14 @@ export default {
         'Desenvolvedor Front End (Web e Mobile)',
         'Desenvolvedor Back End',
         'Desenvolvedor Full Stack'
-      ]
+      ],
+    }
+  },
+  methods: {
+    enviar() {
+      // Criando um novo objeto.
+      const formularioEnviado = Object.assign({}, this.desenvolvedor)
+      console.log('Formulário Enviado!', formularioEnviado);
     }
   }
 }
