@@ -17,7 +17,7 @@
 
           <h3>Preencha abaixo</h3>
 
-          <form>
+          <form @submit.prevent="enviar" @reset="resetar">
 
             <div class="form-group">
               <label>Nome:</label>
@@ -146,7 +146,7 @@
 
             </div>
 
-            <button class="btn btn-secondary">Resetar</button>
+            <button class="btn btn-secondary" @click="resetar">Resetar</button>
             <button class="btn btn-success" type="button" @click="enviar">Enviar</button>
 
           </form>
@@ -204,6 +204,7 @@
 export default {
   data(){
     return {
+      desenvolvedor: {},
       ValoresPadroes: {
         nome: '',
         email: '',
@@ -228,7 +229,13 @@ export default {
       // Criando um novo objeto.
       const formularioEnviado = Object.assign({}, this.desenvolvedor)
       console.log('Formulário Enviado!', formularioEnviado);
+    },
+    resetar() {
+      this.desenvolvedor = Object.assign({}, this.ValoresPadroes)
     }
+  },
+  created() {
+    this.resetar()
   }
 }
 </script>
